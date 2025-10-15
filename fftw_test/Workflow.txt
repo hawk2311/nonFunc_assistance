@@ -1,0 +1,18 @@
+Workflow of reconstructing a picture after use fftw with simulation:
+
+Necessary: picture named "test.png" (size 600x600), image.py, fft_output.txt, image_data.h, fftw.c, gen_freq_pic.c
+
+1. Generate data for a picture:
+python3 image.py 
+
+2. Compile the code of fftw for RISCV:
+riscv64-unknown-elf-gcc -static   -I./fftw-3.3.10/install/include   -L./		fftw-3.3.10/install/lib   -o fftw.elf fftw.c -lfftw3 -lm
+
+3. Compile the code for the reconstruction of the picture:
+gcc gen_freq_pic.c -o gen_freq_pic -lfftw3 -lm
+
+4. Simulate the fftw with spike (functional simulation of RISCV):
+spike pk fftw.elf
+
+5. Execute the reconstruction:
+./gen_freq_pic

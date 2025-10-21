@@ -153,13 +153,12 @@ The Fast Fourier Transformation was implemented with the help of FFTW (\url{http
 \end{lstlisting}
 To follow the instructions you need the following files:  image.py, fft\_output.txt, image\_data.h, fftw.c, gen\_freq\_pic.c and an image (e.g. test.png). All of these files should be in the
 same directory.\\
-The first step is to use the Python script to transform a picture into an array of values \textcolor{red}{WHY?} with 
-the command:\\
+The first step is to use the Python script to transform a picture into an array of values with 
+the following command. You will be asked for a name of an image. You have to enter the whole name of the image including the ending (e.g. ".png").\\
 \begin{lstlisting}
     python3 image.py
-\end{lstlisting}
-After executing this, you will be asked for a name of an image. You have to enter the whole name of the image including the ending (e.g. ".png"). 
-The data created by this script is added in the "image\_data.h" file. Everytime you choose a new image, the data in this file will be overwritten.\\
+\end{lstlisting} 
+The data created by the python script is added in the "image\_data.h" file. Everytime you choose a new image, the data in this file will be overwritten.\\
 After you generated the data for the image, you can compile the FFT code with the following command:\\
 \begin{lstlisting}
     riscv64-unknown-elf-gcc -static 
@@ -181,6 +180,28 @@ And then execute with:\\
     ./gen_freq_pic
 \end{lstlisting}
 \subsection*{Edge Detection}
+To perform edge detection in simulation you need the following files in the same directory: image.py, edge.c, image\_data.h, stb\_image.h, stb\_image\_write.h and an image (like test.png).\\
+The files stb\_image.h and stb\_image\_write.h are added via:\\
+\begin{lstlisting}
+    wget https://raw.githubusercontent.com/nothings/stb/master/stb_image.h
+    wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
+\end{lstlisting}
+The first step is to use the Python script to transform a picture into an array of values with 
+the following command. You will be asked for a name of an image. You have to enter the whole name of the image including the ending, in this case the endig needs always to be ".jpg" for the simulation.\\
+\begin{lstlisting}
+    python3 image.py
+\end{lstlisting} 
+The data created by the python script is added in the "image\_data.h" file. Everytime you choose a new image, the data in this file will be overwritten.\\
+After you generated the data for the image, you can compile the FFT code with the following command:\\
+\begin{lstlisting}
+    riscv64-unknown-elf-gcc -static  -o edge.elf edge.c  -lm
+\end{lstlisting}
+This will generate the executeable file for the simulation. Note that the conda environment needs to be activated and execute "source env.sh" in the chipyard directory. In the next step you can simulate this with spike:\\
+\begin{lstlisting}
+    spike pk edge.elf
+\end{lstlisting}
+The simulation will automatically generate a new image which shows the the result of the edge detection. The image for the result is saved in "edges.png".
+\subsection*{Optical Flow}
 
 }
 \end{document}

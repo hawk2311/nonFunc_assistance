@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  23 OCT 2025 09:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  25 OCT 2025 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -320,6 +320,11 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip56
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks31
+\verbatim@line=\toks32
+\verbatim@in@stream=\read2
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
@@ -327,24 +332,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (./overview.aux)
 \openout1 = `overview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -387,12 +392,12 @@ LaTeX Font Info:    ... okay on input line 18.
 \scratchbox=\box60
 \nofMPsegments=\count305
 \nofMParguments=\count306
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks33
 \MPscratchCnt=\count307
 \MPscratchDim=\dimen176
 \MPnumerator=\count308
 \makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks32
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -409,73 +414,61 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
  (./overview.out) (./overview.out)
 \@outlinefile=\write3
 \openout3 = `overview.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 20.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 21.
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 22.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 23.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 23.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 24.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 22--27
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 28.
-(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (81.66629pt too wide) in paragraph at lines 28--29
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
 
-Overfull \hbox (15.66562pt too wide) in paragraph at lines 38--39
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (21.55887pt too wide) in paragraph at lines 29--29
+[]    \T1/cmtt/m/n/10 curl -O -L https://github.com/chipsalliance/chisel/releases/latest/download/ 
  []
 
 
-Overfull \hbox (63.6661pt too wide) in paragraph at lines 41--42
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (57.66605pt too wide) in paragraph at lines 42--44
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
 
-Overfull \hbox (1053.67618pt too wide) in paragraph at lines 50--51
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (5.81271pt too wide) in paragraph at lines 42--42
+[]    \T1/cmtt/m/n/10 wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public |[] 
+ []
+
+
+Overfull \hbox (0.564pt too wide) in paragraph at lines 43--43
+[]    \T1/cmtt/m/n/10 gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Overfull \hbox (871.85123pt too wide) in paragraph at lines 51--51
+[]\T1/cmtt/m/n/10 sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev device-tree-compiler pkg-config libexpat-dev libfl-dev 
  []
 
 
@@ -484,8 +477,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
  []
 
 
-Overfull \hbox (69.66617pt too wide) in paragraph at lines 56--58
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (11.06143pt too wide) in paragraph at lines 56--56
+[]    \T1/cmtt/m/n/10 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
  []
 
 
@@ -500,115 +493,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
-<testSuccess.png, id=47, 815.045pt x 184.69pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 78--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+<testSuccess.png, id=19, 815.045pt x 184.69pt>
 File: testSuccess.png Graphic file (type png)
 <use testSuccess.png>
-Package pdftex.def Info: testSuccess.png  used on input line 98.
+Package pdftex.def Info: testSuccess.png  used on input line 99.
 (pdftex.def)             Requested size: 326.01222pt x 73.87468pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 105.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--105
+Underfull \hbox (badness 10000) in paragraph at lines 94--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--105
-
- []
-
-
-Overfull \hbox (6.81271pt too wide) in paragraph at lines 78--105
+Overfull \hbox (6.81271pt too wide) in paragraph at lines 94--106
 []$\T1/cmtt/m/n/10 https : / / chipyard . readthedocs . io / en / stable / Simulation / Software-[]RTL-[]Simulation .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--115
+Underfull \hbox (badness 10000) in paragraph at lines 94--106
 
  []
 
 [2 <./testSuccess.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 108--116
 
  []
 
 
-Overfull \hbox (111.6666pt too wide) in paragraph at lines 148--150
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--158
+Overfull \hbox (47.80246pt too wide) in paragraph at lines 136--136
+[]    \T1/cmtt/m/n/10 ./configure --host=$HOST --enable-static --disable-shared --prefix=$(pwd)/install[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 161--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Overfull \hbox (21.55887pt too wide) in paragraph at lines 175--175
+[]    \T1/cmtt/m/n/10 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
  []
 
 
-Overfull \hbox (45.66592pt too wide) in paragraph at lines 186--187
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (81.66629pt too wide) in paragraph at lines 187--188
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
-
- []
-
-[5] (./overview.aux)
+[4] [5] (./overview.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -617,18 +599,18 @@ Package rerunfilecheck Info: File `overview.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 13266 strings out of 476106
- 199232 string characters out of 5793933
- 1983975 words of memory out of 5000000
- 34994 multiletter control sequences out of 15000+600000
- 578053 words of font info for 73 fonts, out of 8000000 for 9000
+ 12682 strings out of 476106
+ 193504 string characters out of 5793933
+ 1937975 words of memory out of 5000000
+ 34498 multiletter control sequences out of 15000+600000
+ 577683 words of font info for 72 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,8n,79p,475b,1964s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,348b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb>
-Output written on overview.pdf (5 pages, 165851 bytes).
+Output written on overview.pdf (5 pages, 163482 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

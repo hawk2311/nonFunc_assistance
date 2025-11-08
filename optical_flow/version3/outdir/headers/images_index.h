@@ -79,90 +79,119 @@
 #include "image_0073.h"
 #include "image_0074.h"
 #include "image_0075.h"
+#include "image_0076.h"
+#include "image_0077.h"
+#include "image_0078.h"
+#include "image_0079.h"
+#include "image_0080.h"
+#include "image_0081.h"
+#include "image_0082.h"
+#include "image_0083.h"
+#include "image_0084.h"
+#include "image_0085.h"
+#include "image_0086.h"
+#include "image_0087.h"
+#include "image_0088.h"
+#include "image_0089.h"
+#include "image_0090.h"
 
-#define IMG_WIDTH 128
-#define IMG_HEIGHT 128
-#define IMG_COUNT 76
+#define IMG_WIDTH 600
+#define IMG_HEIGHT 600
+#define IMG_COUNT 91
 
-extern const uint8_t image_0000[16384];
-extern const uint8_t image_0001[16384];
-extern const uint8_t image_0002[16384];
-extern const uint8_t image_0003[16384];
-extern const uint8_t image_0004[16384];
-extern const uint8_t image_0005[16384];
-extern const uint8_t image_0006[16384];
-extern const uint8_t image_0007[16384];
-extern const uint8_t image_0008[16384];
-extern const uint8_t image_0009[16384];
-extern const uint8_t image_0010[16384];
-extern const uint8_t image_0011[16384];
-extern const uint8_t image_0012[16384];
-extern const uint8_t image_0013[16384];
-extern const uint8_t image_0014[16384];
-extern const uint8_t image_0015[16384];
-extern const uint8_t image_0016[16384];
-extern const uint8_t image_0017[16384];
-extern const uint8_t image_0018[16384];
-extern const uint8_t image_0019[16384];
-extern const uint8_t image_0020[16384];
-extern const uint8_t image_0021[16384];
-extern const uint8_t image_0022[16384];
-extern const uint8_t image_0023[16384];
-extern const uint8_t image_0024[16384];
-extern const uint8_t image_0025[16384];
-extern const uint8_t image_0026[16384];
-extern const uint8_t image_0027[16384];
-extern const uint8_t image_0028[16384];
-extern const uint8_t image_0029[16384];
-extern const uint8_t image_0030[16384];
-extern const uint8_t image_0031[16384];
-extern const uint8_t image_0032[16384];
-extern const uint8_t image_0033[16384];
-extern const uint8_t image_0034[16384];
-extern const uint8_t image_0035[16384];
-extern const uint8_t image_0036[16384];
-extern const uint8_t image_0037[16384];
-extern const uint8_t image_0038[16384];
-extern const uint8_t image_0039[16384];
-extern const uint8_t image_0040[16384];
-extern const uint8_t image_0041[16384];
-extern const uint8_t image_0042[16384];
-extern const uint8_t image_0043[16384];
-extern const uint8_t image_0044[16384];
-extern const uint8_t image_0045[16384];
-extern const uint8_t image_0046[16384];
-extern const uint8_t image_0047[16384];
-extern const uint8_t image_0048[16384];
-extern const uint8_t image_0049[16384];
-extern const uint8_t image_0050[16384];
-extern const uint8_t image_0051[16384];
-extern const uint8_t image_0052[16384];
-extern const uint8_t image_0053[16384];
-extern const uint8_t image_0054[16384];
-extern const uint8_t image_0055[16384];
-extern const uint8_t image_0056[16384];
-extern const uint8_t image_0057[16384];
-extern const uint8_t image_0058[16384];
-extern const uint8_t image_0059[16384];
-extern const uint8_t image_0060[16384];
-extern const uint8_t image_0061[16384];
-extern const uint8_t image_0062[16384];
-extern const uint8_t image_0063[16384];
-extern const uint8_t image_0064[16384];
-extern const uint8_t image_0065[16384];
-extern const uint8_t image_0066[16384];
-extern const uint8_t image_0067[16384];
-extern const uint8_t image_0068[16384];
-extern const uint8_t image_0069[16384];
-extern const uint8_t image_0070[16384];
-extern const uint8_t image_0071[16384];
-extern const uint8_t image_0072[16384];
-extern const uint8_t image_0073[16384];
-extern const uint8_t image_0074[16384];
-extern const uint8_t image_0075[16384];
+extern const uint8_t image_0000[360000];
+extern const uint8_t image_0001[360000];
+extern const uint8_t image_0002[360000];
+extern const uint8_t image_0003[360000];
+extern const uint8_t image_0004[360000];
+extern const uint8_t image_0005[360000];
+extern const uint8_t image_0006[360000];
+extern const uint8_t image_0007[360000];
+extern const uint8_t image_0008[360000];
+extern const uint8_t image_0009[360000];
+extern const uint8_t image_0010[360000];
+extern const uint8_t image_0011[360000];
+extern const uint8_t image_0012[360000];
+extern const uint8_t image_0013[360000];
+extern const uint8_t image_0014[360000];
+extern const uint8_t image_0015[360000];
+extern const uint8_t image_0016[360000];
+extern const uint8_t image_0017[360000];
+extern const uint8_t image_0018[360000];
+extern const uint8_t image_0019[360000];
+extern const uint8_t image_0020[360000];
+extern const uint8_t image_0021[360000];
+extern const uint8_t image_0022[360000];
+extern const uint8_t image_0023[360000];
+extern const uint8_t image_0024[360000];
+extern const uint8_t image_0025[360000];
+extern const uint8_t image_0026[360000];
+extern const uint8_t image_0027[360000];
+extern const uint8_t image_0028[360000];
+extern const uint8_t image_0029[360000];
+extern const uint8_t image_0030[360000];
+extern const uint8_t image_0031[360000];
+extern const uint8_t image_0032[360000];
+extern const uint8_t image_0033[360000];
+extern const uint8_t image_0034[360000];
+extern const uint8_t image_0035[360000];
+extern const uint8_t image_0036[360000];
+extern const uint8_t image_0037[360000];
+extern const uint8_t image_0038[360000];
+extern const uint8_t image_0039[360000];
+extern const uint8_t image_0040[360000];
+extern const uint8_t image_0041[360000];
+extern const uint8_t image_0042[360000];
+extern const uint8_t image_0043[360000];
+extern const uint8_t image_0044[360000];
+extern const uint8_t image_0045[360000];
+extern const uint8_t image_0046[360000];
+extern const uint8_t image_0047[360000];
+extern const uint8_t image_0048[360000];
+extern const uint8_t image_0049[360000];
+extern const uint8_t image_0050[360000];
+extern const uint8_t image_0051[360000];
+extern const uint8_t image_0052[360000];
+extern const uint8_t image_0053[360000];
+extern const uint8_t image_0054[360000];
+extern const uint8_t image_0055[360000];
+extern const uint8_t image_0056[360000];
+extern const uint8_t image_0057[360000];
+extern const uint8_t image_0058[360000];
+extern const uint8_t image_0059[360000];
+extern const uint8_t image_0060[360000];
+extern const uint8_t image_0061[360000];
+extern const uint8_t image_0062[360000];
+extern const uint8_t image_0063[360000];
+extern const uint8_t image_0064[360000];
+extern const uint8_t image_0065[360000];
+extern const uint8_t image_0066[360000];
+extern const uint8_t image_0067[360000];
+extern const uint8_t image_0068[360000];
+extern const uint8_t image_0069[360000];
+extern const uint8_t image_0070[360000];
+extern const uint8_t image_0071[360000];
+extern const uint8_t image_0072[360000];
+extern const uint8_t image_0073[360000];
+extern const uint8_t image_0074[360000];
+extern const uint8_t image_0075[360000];
+extern const uint8_t image_0076[360000];
+extern const uint8_t image_0077[360000];
+extern const uint8_t image_0078[360000];
+extern const uint8_t image_0079[360000];
+extern const uint8_t image_0080[360000];
+extern const uint8_t image_0081[360000];
+extern const uint8_t image_0082[360000];
+extern const uint8_t image_0083[360000];
+extern const uint8_t image_0084[360000];
+extern const uint8_t image_0085[360000];
+extern const uint8_t image_0086[360000];
+extern const uint8_t image_0087[360000];
+extern const uint8_t image_0088[360000];
+extern const uint8_t image_0089[360000];
+extern const uint8_t image_0090[360000];
 
-/* frames as pointers to arrays (each is a uint8_t pointer to W*H values) */
-static const uint8_t* const frames[76] = {
+static const uint8_t* const frames[IMG_COUNT] = {
     image_0000,
     image_0001,
     image_0002,
@@ -239,6 +268,21 @@ static const uint8_t* const frames[76] = {
     image_0073,
     image_0074,
     image_0075,
+    image_0076,
+    image_0077,
+    image_0078,
+    image_0079,
+    image_0080,
+    image_0081,
+    image_0082,
+    image_0083,
+    image_0084,
+    image_0085,
+    image_0086,
+    image_0087,
+    image_0088,
+    image_0089,
+    image_0090,
 };
 
 #endif

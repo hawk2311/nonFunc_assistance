@@ -1,0 +1,7 @@
+To compile the hello.c:
+riscv64-unknown-elf-g++ -o hello.elf hello.c     
+
+To run it:
+spike pk hello.elf
+
+(conda activated and executed source env.sh)

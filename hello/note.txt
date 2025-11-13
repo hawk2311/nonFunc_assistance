@@ -5,3 +5,7 @@ To run it:
 spike pk hello.elf
 
 (conda activated and executed source env.sh)
+
+The CycleTimer is directly reading from the Hardware-Cycle-Register, which means the whole number of cycles between two points in the program are teh result. To use the CycleTimer correctly, it is neccesary to know the CPU frequency.
+
+

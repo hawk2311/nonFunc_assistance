@@ -1,5 +1,6 @@
 {
-    "files.associations": {
-        "opencv.hpp": "c"
-    }
+  "files.associations": {
+    "opencv.hpp": "c"
+  },
+  "C_Cpp_Runner.msvcBatchPath": ""
 }

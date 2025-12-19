@@ -1,3 +1,5 @@
+
+First try to add a simple time and cycle measurement.
 To compile the hello.c:
 riscv64-unknown-elf-g++ -o hello.elf hello.c     
 

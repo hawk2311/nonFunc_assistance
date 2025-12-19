@@ -115,7 +115,7 @@ You don't need to add the whole path if you are in the directory which contains 
 If you want to execute the example code in tests from the chipyard directory with spike, leave out the "pk".
 
 
-\section*{Algorithms in Simulation}
+\section*{Algorithms in Simulation with Spike}
 \subsection*{Fast Fourier Transformation}
 The Fast Fourier Transformation was implemented with the help of FFTW (\url{https://www.fftw.org/}). In my case, it was neccesary to install it manually with the following commands:\\
 \begin{verbatim}
@@ -197,17 +197,56 @@ The simulation will automatically generate a new image which shows the the resul
 - maybe use of OpenCV \\
 - Lucas Kanade Method: Assumption: for each pixel assume Motionfield (hence Optical Flow) is constant within a small neighborhood
 
+\section*{Algorithms in Simulation with Verilator}
+\subsection*{Edge Detection}
+\subsubsection*{Configuration}
+To run edge detection in verilator it is to modify the code and the configuration of the rocket chip.\\
+I created a new configuration for a rocket chip within the chipyard files I have on my local machine. Under the path "chipyard/generators/chipyard/src/main/scala/config" you can found 
+several files which include differnt configurations for rocket chip. I added an own configuration in the file "MemorySystemConfigs.scala".
+The configuration I added looks like this:\\
+\begin{verbatim}
+class OwnMemoryRocketConfig extends Config( //ADDED BY ME
+  new freechips.rocketchip.subsystem.WithoutTLMonitors ++
+  new freechips.rocketchip.subsystem.WithExtMemSize((1<<30) * 1L) ++ // 1GB DRAM
+  new freechips.rocketchip.rocket.WithNHugeCores(4) ++ 
+  new freechips.rocketchip.subsystem.WithNMemoryChannels(4) ++
+  new chipyard.config.AbstractConfig)
+\end{verbatim} 
+The configuration adds an external memory and several channels for this. Moreover this confi has more cores compared to the basic one of rocket chip with just one core.
+The first line helps to make the simulation faster (according to the configuration "FastRTLSimRocketConfig" in the file "RocketConfigs.scala").
+\subsubsection*{Main Code}
+The modified code can be found in the directory "verilator\_edge\_dec" and is called "egdeBare.c". Compared to the code which was simulated with Spike, this code does not use system calls 
+like malloc, calloc or free. These calls worked because Spike handles such things like this. But verilator simulates bare-metal conditions, that's why the modified code uses arrays.
+The calculation of edge detection is the same.
+\subsubsection*{Further Code and Annotations}
+All of the code (the main code as well as the following code metioned) is located within the directory "chipyard/tests" and within this directory it is possible to execute the simulation with:
+\begin{verbatim}
+    cmake . 
 
+    make 
 
-\section*{Further Notes}
-Use Rocket Chip on FPGA:\\
-- Rocket Chip can be configured but as defualt it has AXI connections (and a debug connection)\\
-- it is possible to define a differnt configuration and with this you can change periphery\\
-- it is neccessary to convert the connections (e.g. AXI to PCIe) when using a FPGA\\
-- firesim has predefined configurations for specfic FPGAs\\
-source: \url{https://github.com/chipsalliance/rocket-chip/issues/1594}
-- use of "Vivado" (Installation neccessary)\\
-- within chipyard it is possible to build a bitstream\\
--> chisel is converted to verilog, this runs through vivado to create a bitstream 
+    make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
+    SIM_FLAGS=+max_cycles=10000000000
+\end{verbatim}
+Within this directory you can find the file "CMakeLists.txt"
+and you need this to add the follwing lines under the section "\#Build":
+\begin{verbatim}
+    add_executable(edgeBare edgeBare.c) 
+    target_link_libraries(edgeBare m)
+\end{verbatim}
+With the code in "generating.py" it is possible to generate simulated image data that is saved in "sim\_data.h" automatically. The edge detection is currently working with this 
+simulated data because it was not possible to run a simulation on real image data. Moreover it is not possible to save the output data in a certain file, it is just possible to print it in a console.
+With further work this will improve!\\
+To generate simulated image data execute:
+\begin{verbatim}
+    python3 generating.py
+\end{verbatim}
+If you want to visualize the generated data you can execute the following commands and you will get an image based on the data:
+\begin{verbatim}
+    gcc getData.c -o getData
+
+    ./getData
+\end{verbatim}
+ 
 }
 \end{document}

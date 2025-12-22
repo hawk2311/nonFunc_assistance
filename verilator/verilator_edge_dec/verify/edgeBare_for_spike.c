@@ -28,7 +28,6 @@ int main() {
     //----------------------------------------------------------------------
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
-            //gray[y * WIDTH + x] = image_data[y][x];
             gray[y * WIDTH + x] = image_data[y][x];
         }
     }

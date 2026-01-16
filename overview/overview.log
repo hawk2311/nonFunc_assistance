@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  19 DEC 2025 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  12 JAN 2026 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -601,8 +601,8 @@ Overfull \hbox (21.55887pt too wide) in paragraph at lines 210--210
  []
 
 
-Overfull \hbox (84.54349pt too wide) in paragraph at lines 228--228
-[]    \T1/cmtt/m/n/10 make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1[] 
+Overfull \hbox (84.54349pt too wide) in paragraph at lines 231--231
+[]    \T1/cmtt/m/n/10 make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
  []
 
 [5] [6] (./overview.aux)
@@ -620,9 +620,9 @@ Here is how much of TeX's memory you used:
  34499 multiletter control sequences out of 15000+600000
  578459 words of font info for 73 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,8n,79p,348b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,348b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb>
-Output written on overview.pdf (6 pages, 171919 bytes).
+Output written on overview.pdf (6 pages, 172017 bytes).
 PDF statistics:
  271 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

@@ -219,12 +219,15 @@ The modified code can be found in the directory "verilator\_edge\_dec" and is ca
 like malloc, calloc or free. These calls worked because Spike handles such things like this. But verilator simulates bare-metal conditions, that's why the modified code uses arrays.
 The calculation of edge detection is the same.
 \subsubsection*{Further Code and Annotations}
-All of the code (the main code as well as the following code metioned) is located within the directory "chipyard/tests" and within this directory it is possible to execute the simulation with:
+All of the code (the main code as well as the following code metioned) is located within the directory "chipyard/tests". Within this directory it is possible
+to compile the testfiles for the execution with the following commands.
 \begin{verbatim}
     cmake . 
 
     make 
-
+\end{verbatim}
+With the next command it is possible to start the simmlation in "chipyard/sims/verilator": 
+\begin{verbatim}
     make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
     SIM_FLAGS=+max_cycles=10000000000
 \end{verbatim}

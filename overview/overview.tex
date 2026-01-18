@@ -217,26 +217,47 @@ The first line helps to make the simulation faster (according to the configurati
 \subsubsection*{Main Code}
 The modified code can be found in the directory "verilator\_edge\_dec" and is called "egdeBare.c". Compared to the code which was simulated with Spike, this code does not use system calls 
 like malloc, calloc or free. These calls worked because Spike handles such things like this. But verilator simulates bare-metal conditions, that's why the modified code uses arrays.
-The calculation of edge detection is the same.
-\subsubsection*{Further Code and Annotations}
-All of the code (the main code as well as the following code metioned) is located within the directory "chipyard/tests". Within this directory it is possible
-to compile the testfiles for the execution with the following commands.
+The calculation of edge detection is the same.\\
+In the following you can see the result of executing the main code on an image:\\\\
+\includegraphics*[scale=0.8]{test6-2.jpg} 
+\includegraphics*[scale=0.8]{image2.jpg}
+\newpage
+\subsubsection*{Workflow}
+All of the code (the main code as well as the following code metioned) is located within the directory "chipyard/tests". 
+Within this directory you can find the file "CMakeLists.txt". You need this file to add the follwing lines under the section "\#Build":
+\begin{verbatim}
+    add_executable(edgeBare edgeBare.c) 
+    target_link_libraries(edgeBare m)
+\end{verbatim}
+Before the simulation it is neccesary to prepare the data of an image for the main code. Therefore you can use the code "image.py" by running:
+\begin{verbatim}
+    python3 image.py
+\end{verbatim}
+You have to enter an image file and the width and heiht of this file, right now it is only possible to use ".jpg" files. The code will write the image data to "image\_data.h" which is a two-dimensional array.
+After this it is possible to compile the testfiles for the execution in the same directory with the following commands.
 \begin{verbatim}
     cmake . 
 
     make 
 \end{verbatim}
-With the next command it is possible to start the simmlation in "chipyard/sims/verilator": 
+With the next command you can start the simulation with verilator. Therefore you have to change the directory to "chipyard/sims/verilator" and there you enter:
 \begin{verbatim}
     make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
-    SIM_FLAGS=+max_cycles=10000000000
+    TIMEOUT_CYCLES=100000000000
 \end{verbatim}
-Within this directory you can find the file "CMakeLists.txt"
-and you need this to add the follwing lines under the section "\#Build":
+Right now it is only possible to print the output in the terminal. To use the output after execution you have to manually add the following to the last command:
 \begin{verbatim}
-    add_executable(edgeBare edgeBare.c) 
-    target_link_libraries(edgeBare m)
+    > ../../tests/output.txt
+\end{verbatim} 
+This will move the whole output to the "output.txt". With following command you can generate an image with the data written in "output.txt":
+\begin{verbatim}
+    gcc generate_image.c -o generate_image
+
+    ./generate_image
 \end{verbatim}
+
+
+\subsubsection*{Further Code and Annotations}
 With the code in "generating.py" it is possible to generate simulated image data that is saved in "sim\_data.h" automatically. The edge detection is currently working with this 
 simulated data because it was not possible to run a simulation on real image data. Moreover it is not possible to save the output data in a certain file, it is just possible to print it in a console.
 With further work this will improve!\\

@@ -112,12 +112,13 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 #include <math.h>
 #include "image_data.h"
 #include "sim_data.h"
 #include "edges_output.h"
 
-#define WIDTH  100
+#define WIDTH  133
 #define HEIGHT 100
 #define NPIX   (WIDTH * HEIGHT)
 
@@ -140,7 +141,7 @@ int main() {
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             //gray[y * WIDTH + x] = image_data[y][x];
-            gray[y * WIDTH + x] = sim_data[y][x];
+            gray[y * WIDTH + x] = image_data[y][x];
         }
     }
 
@@ -209,12 +210,10 @@ int main() {
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             //("edges: %i\n", edges[y * WIDTH + x]);
-            edges_output[y][x] = edges[y * WIDTH + x];
-            //printf("edges_output: %i\n", edges_output[y][x]);
+            //edges_output[y][x] = edges[y * WIDTH + x];
+            printf("%i\n", edges[y * WIDTH + x]);
         }
     }
-
-    //memcpy(addr, edges, sizeof(NPIX));
 
     //----------------------------------------------------------------------
     // 6. Kontrollsumme ausgeben
@@ -223,7 +222,7 @@ int main() {
     // for (int i = 0; i < NPIX; i++) sum += edges[i];
 
     //printf("[INFO] Average edge intensity = %lu\n", sum / NPIX);
-    printf("[INFO] edges_export[] is ready for dumping to a .h file.\n");
+    printf("[INFO] Done.\n");
 
     return 0;
 }

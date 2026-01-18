@@ -215,6 +215,16 @@ INPUT ./testSuccess.png
 INPUT ./testSuccess.png
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT ./test6-2.jpg
+INPUT ./test6-2.jpg
+INPUT ./test6-2.jpg
+INPUT ./test6-2.jpg
+INPUT ./test6-2.jpg
+INPUT ./image2.jpg
+INPUT ./image2.jpg
+INPUT ./image2.jpg
+INPUT ./image2.jpg
+INPUT ./image2.jpg
 INPUT overview.aux
 INPUT ./overview.out
 INPUT ./overview.out

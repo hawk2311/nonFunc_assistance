@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  12 JAN 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  18 JAN 2026 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -600,12 +600,27 @@ Overfull \hbox (21.55887pt too wide) in paragraph at lines 210--210
 []  \T1/cmtt/m/n/10 new freechips.rocketchip.subsystem.WithExtMemSize((1<<30) * 1L) ++ // 1GB DRAM[] 
  []
 
+<test6-2.jpg, id=46, 133.49875pt x 100.375pt>
+File: test6-2.jpg Graphic file (type jpg)
+<use test6-2.jpg>
+Package pdftex.def Info: test6-2.jpg  used on input line 222.
+(pdftex.def)             Requested size: 106.79912pt x 80.3001pt.
+<image2.jpg, id=48, 133.49875pt x 100.375pt>
+File: image2.jpg Graphic file (type jpg)
+<use image2.jpg>
+Package pdftex.def Info: image2.jpg  used on input line 223.
+(pdftex.def)             Requested size: 106.79912pt x 80.3001pt.
 
-Overfull \hbox (84.54349pt too wide) in paragraph at lines 231--231
+Underfull \hbox (badness 10000) in paragraph at lines 218--224
+
+ []
+
+[5 <./test6-2.jpg> <./image2.jpg>]
+Overfull \hbox (84.54349pt too wide) in paragraph at lines 245--245
 []    \T1/cmtt/m/n/10 make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
  []
 
-[5] [6] (./overview.aux)
+[6] (./overview.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -614,18 +629,18 @@ Package rerunfilecheck Info: File `overview.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12689 strings out of 476106
- 193576 string characters out of 5793933
+ 12704 strings out of 476106
+ 193830 string characters out of 5793933
  1937975 words of memory out of 5000000
- 34499 multiletter control sequences out of 15000+600000
+ 34513 multiletter control sequences out of 15000+600000
  578459 words of font info for 73 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,8n,79p,348b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,348b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb>
-Output written on overview.pdf (6 pages, 172017 bytes).
+Output written on overview.pdf (6 pages, 195178 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

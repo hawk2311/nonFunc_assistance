@@ -218,7 +218,7 @@ The first line helps to make the simulation faster (according to the configurati
 The modified code can be found in the directory "verilator\_edge\_dec" and is called "egdeBare.c". Compared to the code which was simulated with Spike, this code does not use system calls 
 like malloc, calloc or free. These calls worked because Spike handles such things like this. But verilator simulates bare-metal conditions, that's why the modified code uses arrays.
 The calculation of edge detection is the same.\\
-In the following you can see the result of executing the main code on an image:\\\\
+In the following you can see the result of executing the main code on an image with 159305786 simulation cycles (according to the ".out" file of the simulation):\\\\
 \includegraphics*[scale=0.8]{test6-2.jpg} 
 \includegraphics*[scale=0.8]{image2.jpg}
 \newpage

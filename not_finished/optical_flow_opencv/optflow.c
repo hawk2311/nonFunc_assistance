@@ -1,4 +1,4 @@
-#include <opencv4/opencv2/opencv.hpp>
+#include <usr/local/include/opencv4/opencv2/opencv.hpp>
 #include <iostream>
 
 //Source: https://chatgpt.com/share/68fd0b98-3244-8005-92da-f5dad4a98394

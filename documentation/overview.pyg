@@ -1,0 +1,4 @@
+    curl -O -L https://github.com/chipsalliance/chisel/releases/latest/download/
+    chisel-example.scala
+
+    curl -sSLf https://scala-cli.virtuslab.org/get | sh

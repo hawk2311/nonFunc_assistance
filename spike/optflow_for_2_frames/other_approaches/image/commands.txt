@@ -1,0 +1,12 @@
+With this code and belongig files it is possible to execute optical flow on two frames. The frames used were extracted by other code in the directory input_videos.
+
+Commands:
+
+(Compile in general: g++ optflow_2images.cpp -O2 -o optflow_2images)
+
+Compile for RISC-V:  riscv64-unknown-elf-gcc -static  -o optflow_2images.elf optflow_2images.cpp  -lm
+
+Execution with Spike: spike pk optflow_2images.elf 
+
+
+

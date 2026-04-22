@@ -1,0 +1,7 @@
+From average_flow.png:
+Average Flow: vx=-0.838957 vy=-0.201874 
+
+From average_flow_2.png:
+Average Flow: vx=0.179600 vy=0.003102 
+
+

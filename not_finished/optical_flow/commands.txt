@@ -1,4 +1,0 @@
-Compile optflow.c in general:
-gcc -O2 -o optflow optflow.c -lm
-
-

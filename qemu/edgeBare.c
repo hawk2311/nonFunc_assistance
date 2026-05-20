@@ -4,7 +4,8 @@
 //#include <stdio.h>
 #include <stdint.h>
 //#include <string.h>
-#include <math.h>
+//#include <math.h>
+#include "my_math.h"
 #include "image_data.h"
 
 #define WIDTH  133
@@ -40,10 +41,39 @@ void uart_puts(char *str) {
   }
 }
 
+// convert interger to string
+void uart_putint(int n) {
+    if (n == 0) {
+        uart_putc('0');
+        return;
+    }
+
+    char buf[12];
+    int i = 0;
+
+    
+    if (n < 0) {
+        uart_putc('-');
+        n = -n;
+    }
+
+    // write values backwards in buffer
+    while (n > 0) {
+        buf[i++] = '0' + (n % 10); // get the least significant number with modulo
+        n /= 10; //move the comma to next position, cut last number
+    }
+
+    // print buffer in other direction
+    for (int j = i - 1; j >= 0; j--) {
+        uart_putc(buf[j]);
+    }
+}
+
+
 int main() {
 
     //printf("[INFO] Starting edge detection...\n");
-    uart_puts("Start");
+    //uart_puts("Start");
     uart_puts("\n");
     uart_puts("\r");
 
@@ -89,25 +119,16 @@ int main() {
                 }
             }
             
-            //int magnitude = (int)sqrt((double)(sumX * sumX + sumY * sumY));
-            char magnitude = 0;
+
+            int magnitude = (int)sqrt((sumX * sumX + sumY * sumY)); 
+            //int magnitude = (int)sqrt((double)(sumX * sumX + sumY * sumY)); //PROBLEM
             if (magnitude > 255) magnitude = 255;
             
-            //edges[y * WIDTH + x] = (uint8_t)magnitude;
-            uart_puts("Checkpoint 6");
+            
+
+            uart_putint(magnitude);
             uart_puts("\n");
-            uart_puts("\r");
-
-            int new_value[4]; 	
-            char buf_temp[4]; 	
-    	 	
-            for (int x = 0; x < 4; x++){ 		
-                new_value[x] = magnitude % 10; 		
-                magnitude = magnitude / 10; 		
-                buf_temp[x] = new_value[x] +48;
-            }
-
-            uart_puts();
+            
         }
     }
 
@@ -128,11 +149,7 @@ int main() {
         }
     }
 
-    //----------------------------------------------------------------------
-    // 5. Ergebnis in export-Array kopieren (für Host)
-    //----------------------------------------------------------------------
-    // for (int i = 0; i < NPIX; i++)
-    //     edges_export[i] = edges[i];
+   
 
     
     //for (int y = 0; y < HEIGHT; y++) {
@@ -143,15 +160,11 @@ int main() {
     //    }
     //}
 
-    //----------------------------------------------------------------------
-    // 6. Kontrollsumme ausgeben
-    //----------------------------------------------------------------------
-    // unsigned long sum = 0;
-    // for (int i = 0; i < NPIX; i++) sum += edges[i];
+  
 
     //printf("[INFO] Average edge intensity = %lu\n", sum / NPIX);
     //printf("[INFO] Done.\n");
-    uart_puts("Done");
+    //uart_puts("Done");
 
     return 0;
 }

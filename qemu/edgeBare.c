@@ -74,8 +74,8 @@ int main() {
 
     //printf("[INFO] Starting edge detection...\n");
     //uart_puts("Start");
-    uart_puts("\n");
-    uart_puts("\r");
+    // uart_puts("\n");
+    // uart_puts("\r");
 
     //----------------------------------------------------------------------
     // 1. Bild in eindimensionales Array kopieren
@@ -119,51 +119,27 @@ int main() {
                 }
             }
             
-
-            int magnitude = (int)sqrt((sumX * sumX + sumY * sumY)); 
+            int magnitude = (int)my_sqrt((sumX * sumX + sumY * sumY)); 
             //int magnitude = (int)sqrt((double)(sumX * sumX + sumY * sumY)); //PROBLEM
             if (magnitude > 255) magnitude = 255;
+            edges[y * WIDTH + x] = (uint8_t)magnitude;
             
             
-
-            uart_putint(magnitude);
-            uart_puts("\n");
             
         }
     }
 
-    //----------------------------------------------------------------------
-    // 4. Overlay-Bild erzeugen (reines RGB-Array)
-    //----------------------------------------------------------------------
-    for (int i = 0; i < NPIX; i++) {
-        uint8_t v = gray[i];
-
-        overlay[3*i + 0] = v;
-        overlay[3*i + 1] = v;
-        overlay[3*i + 2] = v;
-
-        if (edges[i] > 100) {
-            overlay[3*i + 0] = 255; // rot
-            overlay[3*i + 1] = 0;
-            overlay[3*i + 2] = 0;
-        }
-    }
-
-   
 
     
-    //for (int y = 0; y < HEIGHT; y++) {
-    //    for (int x = 0; x < WIDTH; x++) {
-    //        //("edges: %i\n", edges[y * WIDTH + x]);
-    //        //edges_output[y][x] = edges[y * WIDTH + x];
-    //        printf("%i\n", edges[y * WIDTH + x]);
-    //    }
-    //}
+    for (int y = 0; y < HEIGHT; y++) {
+       for (int x = 0; x < WIDTH; x++) {
+           uart_putint(edges[y * WIDTH + x]);
+           uart_puts("\n");
+       }
+    }
 
   
 
-    //printf("[INFO] Average edge intensity = %lu\n", sum / NPIX);
-    //printf("[INFO] Done.\n");
     //uart_puts("Done");
 
     return 0;

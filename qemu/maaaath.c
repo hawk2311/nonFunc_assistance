@@ -6,7 +6,7 @@ int main(){
     int num;
     printf("Enter Number:");
     scanf("%i", &num);
-    printf("%f\n",my_sqrt(num));
+    printf("%i\n",my_sqrt(num));
     
 
 

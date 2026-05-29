@@ -13,14 +13,14 @@
 \usepackage{verbatim}
 
 
-\title{Overview of Chipyard}
+\title{Documentation of Assistance for Project nonFunc}
 \author{Dennis Frank}
 \date{}
 \begin{document}
 \maketitle
  {\fontfamily{lmss}\selectfont
+\textbf{The documentation is still WORK IN PROGRESS, last updated on: 29.05.2026}\\
 \section*{Installation of Chipyard}
-\textbf{\textcolor{red}{WORK IN PROGRESS}}\\
 The installation of Chipyard is described in \url{https://chipyard.readthedocs.io/en/latest/Chipyard-Basics/Initial-Repo-Setup.html}. Some additional 
 steps are added by ChatGPT. These steps were performed on a system with Ubuntu 24.04.3 LTS, a differnt configuration could require additional steps!\\ 
 1. Step: Dependencies:\\
@@ -48,10 +48,13 @@ Termurin:\\
 \end{verbatim}
 Ubuntu Packages:\\
 \begin{verbatim}
-sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev device-tree-compiler pkg-config libexpat-dev libfl-dev
+sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev 
+libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool 
+patchutils bc zlib1g-dev device-tree-compiler pkg-config libexpat-dev libfl-dev
+
 sudo apt install libguestfs-tools 
 \end{verbatim}
-The following steps are neccesary:\\
+The following steps are neccesary to create a conda environment:\\
 \begin{verbatim}
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
@@ -59,7 +62,7 @@ The following steps are neccesary:\\
 
     source ~/miniconda3/etc/profile.d/conda.sh
 \end{verbatim}
-After this clone the repository from chipyard and execute the installation, caution a lot of space is needed! Follow the steps:\\\\
+After this clone the repository from Chipyard and execute the installation, caution a lot of space is needed! Follow the steps:\\\\
 \begin{verbatim}
     git clone https://github.com/ucb-bar/chipyard.git
 	
@@ -189,13 +192,6 @@ This will generate the executeable file for the simulation. Note that the conda 
     spike pk edge.elf
 \end{verbatim}
 The simulation will automatically generate a new image which shows the the result of the edge detection. The image for the result is saved in "edges.png".
-\subsection*{Optical Flow}
-- measuring the movement of object in a scene, approximation of movement between to frames\\
-- assumptions are neccesary: \\
-1. brightness of an image point remains constant over time\\
-2. displacemant and time step are very small\\
-- maybe use of OpenCV \\
-- Lucas Kanade Method: Assumption: for each pixel assume Motionfield (hence Optical Flow) is constant within a small neighborhood
 
 \section*{Algorithms in Simulation with Verilator}
 \subsection*{Edge Detection}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.18)  23 JAN 2026 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.1)  29 MAY 2026 11:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/dennis/Dokumente/Projekte/chip/nonFunc_repo/overview/overview.tex
-(/home/dennis/Dokumente/Projekte/chip/nonFunc_repo/overview/overview.tex
+**/home/dennis/Dokumente/Projekte/chip/nonFunc_repo/documentation/overview.tex
+(/home/dennis/Dokumente/Projekte/chip/nonFunc_repo/documentation/overview.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -432,12 +432,17 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 21
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 23.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 24.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 23--28
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  []
 
@@ -467,156 +472,166 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
  []
 
 
-Overfull \hbox (871.85123pt too wide) in paragraph at lines 51--51
-[]\T1/cmtt/m/n/10 sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev device-tree-compiler pkg-config libexpat-dev libfl-dev 
+Overfull \hbox (21.55887pt too wide) in paragraph at lines 51--51
+[]\T1/cmtt/m/n/10 sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Overfull \hbox (26.80759pt too wide) in paragraph at lines 52--52
+[]\T1/cmtt/m/n/10 libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool[] 
+ []
+
+
+Overfull \hbox (16.31015pt too wide) in paragraph at lines 53--53
+[]\T1/cmtt/m/n/10 patchutils bc zlib1g-dev device-tree-compiler pkg-config libexpat-dev libfl-dev[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Overfull \hbox (11.06143pt too wide) in paragraph at lines 56--56
+Overfull \hbox (11.06143pt too wide) in paragraph at lines 59--59
 []    \T1/cmtt/m/n/10 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 78--85
+Underfull \hbox (badness 10000) in paragraph at lines 81--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
 <testSuccess.png, id=19, 815.045pt x 184.69pt>
 File: testSuccess.png Graphic file (type png)
 <use testSuccess.png>
-Package pdftex.def Info: testSuccess.png  used on input line 99.
+Package pdftex.def Info: testSuccess.png  used on input line 102.
 (pdftex.def)             Requested size: 326.01222pt x 73.87468pt.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 105.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 108.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--106
+Underfull \hbox (badness 10000) in paragraph at lines 97--109
 
  []
 
 
-Overfull \hbox (6.81271pt too wide) in paragraph at lines 94--106
+Overfull \hbox (6.81271pt too wide) in paragraph at lines 97--109
 []$\T1/cmtt/m/n/10 https : / / chipyard . readthedocs . io / en / stable / Simulation / Software-[]RTL-[]Simulation .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--106
+Underfull \hbox (badness 10000) in paragraph at lines 97--109
 
  []
 
 [2 <./testSuccess.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 108--116
+Underfull \hbox (badness 10000) in paragraph at lines 111--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-Overfull \hbox (47.80246pt too wide) in paragraph at lines 136--136
+Overfull \hbox (47.80246pt too wide) in paragraph at lines 139--139
 []    \T1/cmtt/m/n/10 ./configure --host=$HOST --enable-static --disable-shared --prefix=$(pwd)/install[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--146
+Underfull \hbox (badness 10000) in paragraph at lines 145--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 
-Overfull \hbox (21.55887pt too wide) in paragraph at lines 175--175
+Overfull \hbox (21.55887pt too wide) in paragraph at lines 178--178
 []    \T1/cmtt/m/n/10 wget https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--179
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--203
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 203--207
-
- []
-
-
-Overfull \hbox (21.55887pt too wide) in paragraph at lines 210--210
+Overfull \hbox (21.55887pt too wide) in paragraph at lines 206--206
 []  \T1/cmtt/m/n/10 new freechips.rocketchip.subsystem.WithExtMemSize((1<<30) * 1L) ++ // 1GB DRAM[] 
  []
 
 <test6-2.jpg, id=46, 133.49875pt x 100.375pt>
 File: test6-2.jpg Graphic file (type jpg)
 <use test6-2.jpg>
-Package pdftex.def Info: test6-2.jpg  used on input line 222.
+Package pdftex.def Info: test6-2.jpg  used on input line 218.
 (pdftex.def)             Requested size: 106.79912pt x 80.3001pt.
 <image2.jpg, id=48, 133.49875pt x 100.375pt>
 File: image2.jpg Graphic file (type jpg)
 <use image2.jpg>
-Package pdftex.def Info: image2.jpg  used on input line 223.
+Package pdftex.def Info: image2.jpg  used on input line 219.
 (pdftex.def)             Requested size: 106.79912pt x 80.3001pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--224
+Underfull \hbox (badness 10000) in paragraph at lines 214--220
 
  []
 
 [5 <./test6-2.jpg> <./image2.jpg>]
-Overfull \hbox (84.54349pt too wide) in paragraph at lines 245--245
+Overfull \hbox (84.54349pt too wide) in paragraph at lines 241--241
 []    \T1/cmtt/m/n/10 make run-binary CONFIG=OwnMemoryRocketConfig BINARY=../../tests/edgeBare.riscv LOADMEM=1 
  []
 
@@ -629,18 +644,18 @@ Package rerunfilecheck Info: File `overview.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12704 strings out of 476106
- 193830 string characters out of 5793933
+ 12703 strings out of 476056
+ 193834 string characters out of 5791605
  1937975 words of memory out of 5000000
- 34513 multiletter control sequences out of 15000+600000
+ 34527 multiletter control sequences out of 15000+600000
  578459 words of font info for 73 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,8n,79p,348b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,353b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dennis/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb>
-Output written on overview.pdf (6 pages, 195892 bytes).
+Output written on overview.pdf (6 pages, 197560 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

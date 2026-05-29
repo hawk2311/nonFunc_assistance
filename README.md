@@ -1,4 +1,4 @@
-# Overview of Chipyard
+# Documentation of Assistance for Project nonFunc
 
 *Author: Dennis Frank*
 
@@ -8,7 +8,7 @@ This repository is part of the project HYBRID ESTIMATION OF NON-FUNCTIONAL PROPE
 
 ## Installation of Chipyard
 
-> ⚠️ **WORK IN PROGRESS**
+> ⚠️ **The documentation is still WORK IN PROGRESS, last updated on: 29.05.2026**
 
 The installation of Chipyard is described in the [official documentation](https://chipyard.readthedocs.io/en/latest/Chipyard-Basics/Initial-Repo-Setup.html). Some additional steps were added with the help of ChatGPT. These steps were performed on a system with **Ubuntu 24.04.3 LTS** — a different configuration could require additional steps!
 

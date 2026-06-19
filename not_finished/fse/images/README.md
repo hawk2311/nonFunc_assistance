@@ -1,0 +1,3 @@
+All code and data in this directory serves the purpose to generate test data for Frequncy Selective Extrapolation where you need an image with errors in it.
+The single steps can be found in the create_test_image.sh. You can see the steps and the explanation if you open this file or use it to generate test data. 
+You need an image and a mask (which contains the errors), both should be of the same size like 600x600 pixels.

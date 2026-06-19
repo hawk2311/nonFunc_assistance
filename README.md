@@ -2,13 +2,13 @@
 
 *Author: Dennis Frank*
 
-This repository is part of the project HYBRID ESTIMATION OF NON-FUNCTIONAL PROPERTIES OF SOFTWARE (TIME, POWER AND ENERGY) ON EMBEDDED COMPUTER ARCHITECTURES FOR IMAGE AND VIDEO PROCESSING or in short form also called nonFunc. The assistance for the project shown in this repository is about the installation and use of Chipyard and the simulation of differnt video and image processing algorithms.
+This repository is part of the project HYBRID ESTIMATION OF NON-FUNCTIONAL PROPERTIES OF SOFTWARE (TIME, POWER AND ENERGY) ON EMBEDDED COMPUTER ARCHITECTURES FOR IMAGE AND VIDEO PROCESSING or in short form also called nonFunc. The assistance for the project shown in this repository is about the installation and use of Chipyard and the simulation of differnt video and image processing algorithms. In this README you can find steps and information about the topics of this repository. **The information can also be found in the documentation but latest changes will be added here first.**
 
 ---
 
 ## Installation of Chipyard
 
-> ⚠️ **The documentation is still WORK IN PROGRESS, last updated on: 29.05.2026**
+> ⚠️ **The documentation is still WORK IN PROGRESS, last updated on: 05.06.2026**
 
 The installation of Chipyard is described in the [official documentation](https://chipyard.readthedocs.io/en/latest/Chipyard-Basics/Initial-Repo-Setup.html). Some additional steps were added with the help of ChatGPT. These steps were performed on a system with **Ubuntu 24.04.3 LTS** — a different configuration could require additional steps!
 
@@ -116,6 +116,12 @@ spike pk "the-whole-path-to-your-.elf-file-starting-at-home-directory"
 ```
 
 If you are already in the directory containing the `.elf` file, you can omit the full path. When running example code from the chipyard `tests` directory with Spike, omit `pk`.
+
+---
+
+### Use of Qemu
+
+An idea was to use Qemu as another option for simulation and find out if it provides any benefits over Spike or Verilator. In general Qemu is a machine emulator and virtualizer. The most common use case is System Emulation where you can emulate  an entire machine with CPU, Memory and more. In this way it is also possible to emulate a RISC-V chip. For our project the main benefit of Qemu is to test the UART communication which is also used for the implementation on the FPGA. This was tested with the Edge Detection Code (can be found in the qemu directory). Moreover, Qemu can be used track executed instructions or measure the amount of instructions but this was not tested yet.
 
 ---
 
@@ -286,7 +292,7 @@ target_link_libraries(edgeBare m)
 
 #### Further Code and Annotations
 
-The script `generating.py` can generate simulated image data, saved to `sim_data.h`. The edge detection currently works with this simulated data, as running on real image data was not yet possible. Output can currently only be printed to the console — saving to a file is planned for future work.
+The script `generating.py` can generate simulated image data, saved to `sim_data.h`. Output can currently only be printed to the console — saving to a file is planned for future work.
 
 To generate simulated image data:
 ```bash

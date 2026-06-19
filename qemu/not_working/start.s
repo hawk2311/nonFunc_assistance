@@ -1,13 +1,17 @@
-# 0 "start.S"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/usr/include/stdc-predef.h" 1 3 4
-# 0 "<command-line>" 2
-# 1 "start.S"
+# Simple C runtime startup bootstrap
+# Two primary functions:
+# - Stack allocation and initializing stack pointer
+# - Jumping to main
 
-.section .text.start
+.section .text._start
 .global _start
 _start:
-    la sp, _stack_top
-    call main
-1: j 1b
+    la sp, __stack_top    # Load the stack pointer
+    add s0, sp, zero      # Set the frame pointer
+    jal zero, main        # Run main entry point - no argc
+loop:	j loop              # Spin forever in case main returns
+													
+.section .data
+.space 1024*4096             
+.align 16                 # Smallest stack allocation is 16 bytes, so align accordingly
+__stack_top:              # The stack grows downward according the Risc-V ABI

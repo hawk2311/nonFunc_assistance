@@ -1,6 +1,8 @@
 from PIL import Image
 import numpy as np
 
+
+
 pic = input("Please enter the name of the picture (with ending):")
 #name = input("Enter name for file data:")
 # 1. load image and convert it to greyscale
@@ -19,7 +21,7 @@ pixel_data = np.array(img, dtype=np.uint8)
 with open("image_data.h", "w") as f:
     f.write("#ifndef IMAGE_DATA_H\n#define IMAGE_DATA_H\n\n")
     f.write("#include <stdint.h>\n\n")
-    f.write("const uint8_t image_data[600][600] = {\n") #600 was 64 before changing
+    f.write("const uint8_t image_data[200][200] = {\n") #600 was 64 before changing
     for row in pixel_data:
         line = ", ".join(f"{val:3d}" for val in row)
         f.write(f"    {{{line}}},\n")
@@ -47,7 +49,7 @@ pixel_data = np.array(img, dtype=np.uint8)
 with open("mask_data.h", "w") as f:
     f.write("#ifndef MASK_DATA_H\n#define MASK_DATA_H\n\n")
     f.write("#include <stdint.h>\n\n")
-    f.write("const uint8_t mask_data[600][600] = {\n") #600 was 64 before changing
+    f.write("const uint8_t mask_data[200][200] = {\n") #600 was 64 before changing
     for row in pixel_data:
         line = ", ".join(f"{val:3d}" for val in row)
         f.write(f"    {{{line}}},\n")

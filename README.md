@@ -305,3 +305,13 @@ gcc getData.c -o getData
 
 ./getData
 ```
+
+## Software Profiling
+
+### perf
+
+perf is a performance analyzing tool in Linux. 
+
+
+### valgrind
+

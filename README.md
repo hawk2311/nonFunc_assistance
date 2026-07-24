@@ -310,8 +310,28 @@ gcc getData.c -o getData
 
 ### perf
 
-perf is a performance analyzing tool in Linux. 
+perf is a performance analyzing tool in Linux, which is built upon the kernel infrastructure. In general it is possible to cover hardware level (CPU/ Performance Monitoring Unit) features and also software features (software counters, tracepoints). Since perf is a linux tool, it cannot directly be used on a bare-metal platform but it is possible to use perf on a host system with linux on it. This means concrete numbers like cpu cycles cannot be applied to the FPGA. Nonetheless, perf can be used to analyse the code itself like the amount of instructions, branches or memory accesses.
+The command "perf stat" runs the given command and gathers performance counter statistics.
+The command executed with code edgeBare.c which was compiled with gcc (more details in the README in the directory software_profiling):
 
+```
+perf stat -e instructions,branches,branch-misses ./edge
+[INFO] Starting edge detection...
+[INFO] Done.
 
+ Performance counter stats for './edge':
+
+         7.690.671      instructions                                                          
+           603.126      branches                                                              
+            10.158      branch-misses                                                         
+
+       0,002538004 seconds time elapsed
+
+       0,001299000 seconds user
+       0,001299000 seconds sys
+``` 
+```
+
+Another command is "perf record" which runs the given command and gathers a performance counter profile from it into "perf.data". The information can be displayed with "perf report" afterwards. 
 ### valgrind
 

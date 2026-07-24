@@ -21,6 +21,8 @@ notes:
 valgrind:
 
 commands:
-- using valgrind: valgrind --tool=callgrind ./edge
+- using valgrind: valgrind --tool=<tool> ./edge
+- tools can be: memcheck, cachegrind, callgrind, lackey (and more)
+
 - kcachegrind callgrind.out.<pid>
 

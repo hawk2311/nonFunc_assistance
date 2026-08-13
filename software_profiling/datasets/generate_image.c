@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define WIDTH 512
-#define HEIGHT 768
+#define WIDTH 768
+#define HEIGHT 512
 #define MAX_PIXELS (WIDTH * HEIGHT)
 
 int parse_single_int(const char *line, int *out)

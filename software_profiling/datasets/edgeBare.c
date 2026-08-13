@@ -1,4 +1,4 @@
-#include image_harder_1.h
+#include "header/image_data_24.h"
 #define WIDTH 768
 #define HEIGHT 512
 
@@ -7,27 +7,25 @@
 #include <string.h>
 #include <math.h>
 
-
 #define NPIX   (WIDTH * HEIGHT)
 
 // Statische Arrays (liegen im DRAM bzw. im simulierten RAM)
 static uint8_t gray[NPIX];
 static uint8_t edges[NPIX];
-static uint8_t overlay[NPIX * 3];   // RGB Overlay
-
+//static uint8_t overlay[NPIX * 3];   // RGB Overlay
+//static uint8_t edges_export[NPIX];
+//uint8_t edges_output[5][5];
 
 
 
 int main() {
 
-    //printf("[INFO] Starting edge detection...\n");
 
     //----------------------------------------------------------------------
     // 1. Bild in eindimensionales Array kopieren
     //----------------------------------------------------------------------
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
-            //gray[y * WIDTH + x] = image_data[y][x];
             gray[y * WIDTH + x] = image_data[y][x];
         }
     }
@@ -70,42 +68,20 @@ int main() {
         }
     }
 
-    //----------------------------------------------------------------------
-    // 4. Overlay-Bild erzeugen (reines RGB-Array)
-    //----------------------------------------------------------------------
-    for (int i = 0; i < NPIX; i++) {
-        uint8_t v = gray[i];
+   
 
-        overlay[3*i + 0] = v;
-        overlay[3*i + 1] = v;
-        overlay[3*i + 2] = v;
-
-        if (edges[i] > 100) {
-            overlay[3*i + 0] = 255; // rot
-            overlay[3*i + 1] = 0;
-            overlay[3*i + 2] = 0;
-        }
-    }
-
-    //----------------------------------------------------------------------
-    // 5. Ergebnis in export-Array kopieren (für Host)
-    //----------------------------------------------------------------------
-    //Printing the Output is not considered
+    
     // for (int y = 0; y < HEIGHT; y++) {
     //     for (int x = 0; x < WIDTH; x++) {
+    //         //("edges: %i\n", edges[y * WIDTH + x]);
+    //         //edges_output[y][x] = edges[y * WIDTH + x];
     //         printf("%i\n", edges[y * WIDTH + x]);
     //     }
     // }
 
    
 
-    //printf("[INFO] Done.\n");
-
     return 0;
 }
-
-
-
-
 
 

@@ -1,4 +1,4 @@
-#include "header/image_data_24.h"
+#include "../header/image_data_24.h"
 #define WIDTH 768
 #define HEIGHT 512
 

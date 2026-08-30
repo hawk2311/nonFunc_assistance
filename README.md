@@ -330,8 +330,15 @@ perf stat -e instructions,branches,branch-misses ./edge
        0,001299000 seconds user
        0,001299000 seconds sys
 ``` 
-```
+
 
 Another command is "perf record" which runs the given command and gathers a performance counter profile from it into "perf.data". The information can be displayed with "perf report" afterwards. 
-### valgrind
+
+## Datasets
+With the help of perf (in this case "perf stat") it was possible to gather data about the algorithms we used before in Spike and/or in Verilator. Therefore we created a script called "create_dataset.py" in the directory software_profiling/datasets/edge and software_profiling/datasets/edge. With this script you can automatically compile the code with differnt images and run it with perf to gather data about instructions, cycles, branches, cache-references and cache-misses (this could be modified, see perf documantation for this). The code is executed multiple times with the same image and in the end the average of the valuesfrom  the differnt runs get calculated. You can find the data about the single runs in edge_dec_data.csv and the calculated average in edge_dec_avg, the same for fftw. It is important to mention that the codes get compiled with gcc and not with riscv64-unknown-elf-gcc, only in this way it is possible to use perf. Every kind of output in the code which was used before is disabled in this case.
+You can execute the script with 
+```
+python3 create_dataset.py
+```
+If you want to generate the header files for the images add "-header" as flag. You can find images in software_profiling/images and header files get saved in software_profiling/header. 
 

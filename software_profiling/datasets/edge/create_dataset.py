@@ -17,7 +17,7 @@ def create_header(name, index):
     #convert into NumPy-Array 
     pixel_data = np.array(img, dtype=np.uint8) 
     # export it as a C-array
-    with open("../header/image_data_"+str(index)+".h", "w") as f:
+    with open("../header/images/image_data_"+str(index)+".h", "w") as f:
         f.write("#ifndef IMAGE_DATA_H\n#define IMAGE_DATA_H\n\n")
         f.write("#include <stdint.h>\n\n")
         f.write(f"const uint8_t image_data[{height}][{width}] = {{\n") 
@@ -46,7 +46,7 @@ def get_sizes():
 def update_code(index, width, height):
     with open("edgeBare.c", "r",  encoding='utf-8') as file:
         data = file.readlines()
-        data[0] = "#include \"../header/image_data_"+str(index)+".h\"\n"
+        data[0] = "#include \"../header/images/image_data_"+str(index)+".h\"\n"
         data[1] = "#define WIDTH "+ str(width) +"\n"
         data[2] = "#define HEIGHT "+ str(height) + "\n"
     with open("edgeBare.c", "w",  encoding='utf-8') as file:

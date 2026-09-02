@@ -1,0 +1,102 @@
+
+"""
+video_to_headers.py
+Usage:
+  python3 video_to_headers.py input.mp4 outdir --width 128 --height 128 --max-frames 50
+
+Produces:
+  outdir/frames/frame0000.png ... (optional)
+  outdir/headers/image_0000.h ...
+  outdir/headers/images_index.h
+"""
+import os, sys, subprocess, argparse
+from PIL import Image
+import numpy as np
+
+def extract_frames(video_in, frames_dir, fps=None):
+    os.makedirs(frames_dir, exist_ok=True)
+    # ffmpeg command: write grayscale PNG frames
+    cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", video_in]
+    if fps is not None:
+        cmd += ["-vf", f"fps={fps}"]
+    cmd += ["-pix_fmt", "gray", os.path.join(frames_dir, "frame%04d.png")]
+    print("Running:", " ".join(cmd))
+    subprocess.check_call(cmd)
+
+def image_to_c_array(img, arr_name):
+    a = np.array(img, dtype=np.uint8).flatten()
+    per = 12
+    lines = []
+    for i in range(0, a.size, per):
+        chunk = a[i:i+per]
+        lines.append(", ".join(str(int(x)) for x in chunk))
+    init = ",\n    ".join(lines)
+    return f"const uint8_t {arr_name}[{a.size}] = {{\n    {init}\n}};\n"
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("video")
+    p.add_argument("outdir")
+    p.add_argument("--width", type=int, default=128)
+    p.add_argument("--height", type=int, default=128)
+    p.add_argument("--max-frames", type=int, default=1000)
+    p.add_argument("--fps", type=int, default=None)
+    p.add_argument("--no-extract", action="store_true", help="skip ffmpeg extraction (frames already in frames/)")
+    args = p.parse_args()
+
+    frames_dir = os.path.join(args.outdir, "frames")
+    hdr_dir = os.path.join(args.outdir, "headers")
+    os.makedirs(hdr_dir, exist_ok=True)
+
+    if not args.no_extract:
+        extract_frames(args.video, frames_dir, fps=args.fps)
+    else:
+        if not os.path.isdir(frames_dir):
+            print("frames directory missing. Use --no-extract only if frames already exist.")
+            sys.exit(1)
+
+    files = sorted([f for f in os.listdir(frames_dir) if f.lower().endswith(".png")])
+    if len(files) == 0:
+        print("No frames found in", frames_dir)
+        sys.exit(1)
+
+    files = files[:args.max_frames]
+    arr_names = []
+    W = args.width; H = args.height
+
+    for idx, fname in enumerate(files):
+        path = os.path.join(frames_dir, fname)
+        img = Image.open(path).convert("L")
+        img = img.resize((W, H), Image.BILINEAR)
+        arr_name = f"image_{idx:04d}"
+        arr_names.append(arr_name)
+        c_code = image_to_c_array(img, arr_name)
+        header_name = os.path.join(hdr_dir, f"{arr_name}.h")
+        with open(header_name, "w") as fh:
+            fh.write(f"#ifndef IMAGE_{arr_name.upper()}_H\n#define IMAGE_{arr_name.upper()}_H\n\n")
+            fh.write("#include <stdint.h>\n\n")
+            fh.write(c_code)
+            fh.write("\n#endif\n")
+        print("Wrote", header_name)
+
+    # create index header
+    idx_path = os.path.join(hdr_dir, "images_index.h")
+    with open(idx_path, "w") as fh:
+        fh.write("#ifndef IMAGES_INDEX_H\n#define IMAGES_INDEX_H\n\n")
+        fh.write("#include <stdint.h>\n\n")
+        for name in arr_names:
+            fh.write(f'#include "{name}.h"\n')
+        fh.write("\n")
+        fh.write(f"#define IMG_WIDTH {W}\n#define IMG_HEIGHT {H}\n#define IMG_COUNT {len(arr_names)}\n\n")
+        # declare extern arrays
+        for name in arr_names:
+            fh.write(f"extern const uint8_t {name}[{W*H}];\n")
+        fh.write("\nstatic const uint8_t* const frames[IMG_COUNT] = {\n")
+        for name in arr_names:
+            fh.write(f"    {name},\n")
+        fh.write("};\n\n#endif\n")
+    print("Wrote", idx_path)
+    print("Done: created", len(arr_names), "headers (W x H =", W, "x", H, ")")
+
+if __name__ == "__main__":
+    main()

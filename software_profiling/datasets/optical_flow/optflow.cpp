@@ -1,3 +1,4 @@
+#include "../header/videos/video_2/images_index.h"
 
 
 //This code is taken from directory spike/optical_flow, there you can see the "original".
@@ -7,7 +8,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "../../input/videos/split/split_video/headers/images_index.h"
 
 #define WIDTH IMG_WIDTH
 #define HEIGHT IMG_HEIGHT

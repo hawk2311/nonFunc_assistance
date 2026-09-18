@@ -1,19 +1,12 @@
-
-
-
-//The following code draws lines in the output image depicting the actual movement
-
-#include <stdio.h>
-#include <stdint.h>
+#include "./header/video_14/image_0000.h"
+#include "./header/video_14/image_0001.h"
+#define WIDTH 1280
+#define HEIGHT 720
 #include <math.h>
 #include <stdlib.h>
 
-#include "../../input/videos/split/split_video/headers/image_0000.h"
-#include "../../input/videos/split/split_video/headers/image_0001.h"
-
-#define WIDTH 426
-#define HEIGHT 240
 #define NPIX (WIDTH*HEIGHT)
+
 
 // Flow
 static float flow_x[NPIX];

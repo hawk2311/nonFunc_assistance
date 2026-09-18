@@ -1,11 +1,14 @@
+
+
 """
 video_to_headers.py
 Verwendung:
   python3 video_to_headers.py input.mp4 1
 
 Erzeugt:
-  ./header/videos/video_1/image_0000.h ...
-  ./header/videos/video_1/images_index.h
+  ./header/video_1/image_0000.h
+  ./header/video_1/image_0001.h
+  ./header/video_1/images_index.h
 """
 
 import os
@@ -17,7 +20,8 @@ import json
 from PIL import Image
 import numpy as np
 
-BASE_OUTPUT_DIR = os.path.abspath(os.path.join("..", "header", "videos"))
+BASE_OUTPUT_DIR = "./header/"
+
 
 def get_video_dimensions(video_in):
     cmd = [
@@ -43,10 +47,10 @@ def extract_frames(video_in, temp_frames_dir):
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error",
         "-i", video_in,
+        "-vframes", "2",  # Extrahierung auf genau die ersten 2 Frames beschränken
         "-pix_fmt", "gray",
         os.path.join(temp_frames_dir, "frame%04d.png")
     ]
-    #print("Extrahiere Frames aus dem Video...")
     subprocess.check_call(cmd)
 
 def image_to_c_array(img, arr_name):
@@ -60,7 +64,7 @@ def image_to_c_array(img, arr_name):
     return f"const uint8_t {arr_name}[{a.size}] = {{\n    {init}\n}};\n"
 
 def main():
-    p = argparse.ArgumentParser(description="Konvertiert ein Video in C-Header-Dateien.")
+    p = argparse.ArgumentParser(description="Konvertiert ein Video in C-Header-Dateien (nur die ersten 2 Frames).")
     p.add_argument("video", help="Pfad zur Eingabe-Videodatei")
     p.add_argument("index", help="Index für den Zielordner (z.B. 1 für video_1)")
     args = p.parse_args()
@@ -70,9 +74,7 @@ def main():
         sys.exit(1)
 
     width, height = get_video_dimensions(args.video)
-    #print(f"Erkannte Videogröße: {width}x{height}")
 
-    # Zielordner ist dynamisch basierend auf dem Index (./header/videos/video_i)
     hdr_dir = os.path.join(BASE_OUTPUT_DIR, f"video_{args.index}")
     os.makedirs(hdr_dir, exist_ok=True)
 
@@ -81,7 +83,8 @@ def main():
     try:
         extract_frames(args.video, temp_frames_dir)
 
-        files = sorted([f for f in os.listdir(temp_frames_dir) if f.lower().endswith(".png")])
+        # Nimmt maximal die ersten 2 Frames aus dem Verzeichnis
+        files = sorted([f for f in os.listdir(temp_frames_dir) if f.lower().endswith(".png")])[:2]
         if not files:
             print("Keine Frames im Video gefunden.")
             sys.exit(1)
@@ -103,7 +106,6 @@ def main():
                 fh.write("#include <stdint.h>\n\n")
                 fh.write(c_code)
                 fh.write("\n#endif\n")
-            #print(f"Erstellt: {header_name}")
 
         idx_path = os.path.join(hdr_dir, "images_index.h")
         with open(idx_path, "w") as fh:
@@ -120,9 +122,6 @@ def main():
             for name in arr_names:
                 fh.write(f"    {name},\n")
             fh.write("};\n\n#endif\n")
-            
-        #print(f"Erstellt: {idx_path}")
-        #print(f"Fertig: {len(arr_names)} Header erstellt in {hdr_dir} (Auflösung: {width}x{height})")
 
     finally:
         if os.path.exists(temp_frames_dir):

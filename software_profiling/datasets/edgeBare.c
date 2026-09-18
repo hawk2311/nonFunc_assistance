@@ -1,6 +1,6 @@
-#include "header/images/image_data_24.h"
-#define WIDTH 768
-#define HEIGHT 512
+#include "header/images/dataset_2/image_data_22.h"
+#define WIDTH 895
+#define HEIGHT 597
 
 #include <stdio.h>
 #include <stdint.h>

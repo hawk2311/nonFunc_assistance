@@ -3,7 +3,6 @@ import os
 import re
 import csv
 import sys
-import argparse
 from PIL import Image
 import numpy as np
 
@@ -47,7 +46,7 @@ def create_header(name, index):
     #convert into NumPy-Array 
     pixel_data = np.array(img, dtype=np.uint8) 
     # export it as a C-array
-    with open("header/images/image_data_"+str(index)+".h", "w") as f:
+    with open("header/images/dataset_2/image_data_"+str(index)+".h", "w") as f:
         f.write("#ifndef IMAGE_DATA_H\n#define IMAGE_DATA_H\n\n")
         f.write("#include <stdint.h>\n\n")
         f.write(f"const uint8_t image_data[{height}][{width}] = {{\n") 
@@ -57,33 +56,29 @@ def create_header(name, index):
         f.write("};\n\n#endif\n")
 
 
-def create_image_data():
-    images = os.listdir("../images")
-    images.sort()
+def get_sizes(images):
     for im in images:
-        img= Image.open(im).convert("L")
+        img= Image.open("images/dataset_2/"+im).convert("L")
         image_size.append(img.size)
 
 
-def get_sizes():
-    images = os.listdir("images")
-    images.sort()
+def create_image_data(images):
     index = 1
     for im in images:
-        create_header("images/"+im, index)
+        create_header("images/dataset_2/"+im, index)
         index+=1
 
 def update_code(index, width, height):
     with open(name_code, "r",  encoding='utf-8') as file:
         data = file.readlines()
-        data[0] = "#include \"header/images/image_data_"+str(index)+".h\"\n"
+        data[0] = "#include \"header/images/dataset_2/image_data_"+str(index)+".h\"\n"
         data[1] = "#define WIDTH "+ str(width) +"\n"
         data[2] = "#define HEIGHT "+ str(height) + "\n"
     with open(name_code, "w",  encoding='utf-8') as file:
         file.writelines(data)
     
 
-def collect_data(index):
+def collect_data(images, index):
     sum_ins = sum_cyc = sum_bra = sum_car = sum_cam = sum_time =0
     for i in range(10):
             res = subprocess.run(["perf", "stat" ,"-e" ,"instructions,cycles,branches,cache-references,cache-misses" , "./" + name_exec], capture_output=True, text=True) #executing perf stat with compiled code
@@ -100,14 +95,14 @@ def collect_data(index):
             if i<1 and index<1:
                 with open(csv_data, "w") as csv_f:
                     writer = csv.writer(csv_f)
-                    writer.writerow(['image_name:'+"kodim"+str(index+1), 'image_size(width,height):'+ str(image_size[index])])
+                    writer.writerow(['image_name:'+ images[index], 'image_size(width,height):'+ str(image_size[index])])
                     writer.writerow(['instructions','cycles','branches','cache-referencs','cache-misses', 'time elapsed in s'])
 
             #after first run all data needs to be appended
             if i<1 and index>=1:
                 with open(csv_data, "a") as csv_f:
                     writer = csv.writer(csv_f)
-                    writer.writerow(['image_name:'+"kodim"+str(index+1), 'image_size(width,height):'+ str(image_size[index])])
+                    writer.writerow(['image_name:'+images[index], 'image_size(width,height):'+ str(image_size[index])])
                     writer.writerow(['instructions','cycles','branches','cache-referencs','cache-misses', 'time elapsed in s'])
 
             with open(csv_data, "a") as csv_f:
@@ -138,7 +133,7 @@ def collect_data(index):
 
                 with open(csv_avg, "a") as csv_f:
                             writer = csv.writer(csv_f)
-                            writer.writerow(["kodim"+str(index+1), image_size[index], avg_ins, avg_cyc, avg_bra, avg_car, avg_cam, avg_time])
+                            writer.writerow([images[index], image_size[index], avg_ins, avg_cyc, avg_bra, avg_car, avg_cam, avg_time])
 
 
 
@@ -150,7 +145,16 @@ def collect_data(index):
 
 
 def main():
+    images = os.listdir("images/dataset_2")
+    images.sort()
+
     #if the -header flag is set than the header files for the images will be created
+    if sys.argv[6] == "-header":
+         create_image_data(images)
+    else:
+         get_sizes(images)
+
+
     # parser = argparse.ArgumentParser()
     # parser.add_argument("-header", action="store_true")
     # args = parser.parse_args()
@@ -159,14 +163,14 @@ def main():
     # else:
     #     get_sizes()
 
-    get_sizes()
+
     createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
 
     for index in range(len(image_size)):
         width, height = image_size[index] #width and height of all images got saved before
         update_code(index+1, width, height)
         subprocess.run(buffer)   #compile the code
-        collect_data(index)
+        collect_data(images, index)
         
 
     

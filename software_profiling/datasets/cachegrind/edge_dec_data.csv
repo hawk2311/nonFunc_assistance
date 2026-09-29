@@ -1,0 +1,66 @@
+image_name:Brain2.pgm,"image_size(width,height):(675, 901)"
+instructions,branches
+"277,973,095","12,145,003"
+image_name:Jupiter.ppm,"image_size(width,height):(1390, 1079)"
+instructions,branches
+"686,435,226","29,944,547"
+image_name:Malamute.bmp,"image_size(width,height):(1616, 1080)"
+instructions,branches
+"798,934,227","34,845,269"
+image_name:Maltese.bmp,"image_size(width,height):(2238, 2446)"
+instructions,branches
+"2,508,734,302","109,352,539"
+image_name:Mars.ppm,"image_size(width,height):(1280, 1024)"
+instructions,branches
+"661,229,896","26,168,731"
+image_name:Rainier.bmp,"image_size(width,height):(1920, 1080)"
+instructions,branches
+"955,771,320","41,400,107"
+image_name:Saturn.ppm,"image_size(width,height):(1500, 1200)"
+instructions,branches
+"824,020,353","35,939,993"
+image_name:Sun.ppm,"image_size(width,height):(2100, 2034)"
+instructions,branches
+"1,957,142,680","85,316,841"
+image_name:Uranus.ppm,"image_size(width,height):(1920, 1080)"
+instructions,branches
+"955,557,629","41,400,107"
+image_name:airplane.ppm,"image_size(width,height):(512, 512)"
+instructions,branches
+"122,485,671","5,243,803"
+image_name:airplaneU2.pgm,"image_size(width,height):(1024, 1024)"
+instructions,branches
+"491,181,456","20,935,579"
+image_name:barbara.ppm,"image_size(width,height):(720, 576)"
+instructions,branches
+"189,430,409","8,285,243"
+image_name:bone_scint.pgm,"image_size(width,height):(1129, 1865)"
+instructions,branches
+"964,037,740","42,043,185"
+image_name:brickwall.bmp,"image_size(width,height):(1024, 1024)"
+instructions,branches
+"491,197,887","20,935,579"
+image_name:carpet.bmp,"image_size(width,height):(1024, 1024)"
+instructions,branches
+"491,315,064","20,935,579"
+image_name:girl.ppm,"image_size(width,height):(720, 576)"
+instructions,branches
+"189,409,015","8,285,243"
+image_name:lenna.ppm,"image_size(width,height):(512, 512)"
+instructions,branches
+"122,478,760","5,243,803"
+image_name:man.pgm,"image_size(width,height):(1024, 1024)"
+instructions,branches
+"491,209,848","20,935,579"
+image_name:monarch.ppm,"image_size(width,height):(768, 512)"
+instructions,branches
+"197,942,587","7,855,515"
+image_name:shoulderCR.pgm,"image_size(width,height):(1162, 684)"
+instructions,branches
+"363,381,486","15,866,543"
+image_name:textureA.bmp,"image_size(width,height):(1024, 1024)"
+instructions,branches
+"491,183,087","20,935,579"
+image_name:ultrasound.pgm,"image_size(width,height):(895, 597)"
+instructions,branches
+"244,132,334","10,669,785"

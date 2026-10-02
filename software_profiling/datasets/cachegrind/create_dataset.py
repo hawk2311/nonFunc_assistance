@@ -10,7 +10,7 @@ import numpy as np
 image_size = [] #store size of images for later use
 
 comp_cmd=sys.argv[1] #you need to add the compilation command for your code 
-name_code = sys.argv[2]
+name_code = sys.argv[2] #name of code which should be used
 name_exec = sys.argv[3] #add the name of the executable of the compilation, must be the same as in the command before
 csv_data = sys.argv[4] #output for perf data
 

@@ -23,15 +23,15 @@ def get_video_dimensions(video_in):
     height = data["streams"][0]["height"]
     return width, height
 
-
+#create video headers for list of videos
 def create_video_data(videos):
-    #print(videos)
     index = 1
     for v in videos:
         video= os.path.join("./Videos", v)
         subprocess.run(["python3", "video_to_headers.py", video, str(index)])
         index+=1
 
+#code needs to be updated for every video
 def update_code(index, width, height):
     with open("optflow_2frames.cpp", "r",  encoding='utf-8') as file:
         data = file.readlines()
@@ -54,7 +54,6 @@ def collect_data(videos):
         subprocess.run(["g++", "-static",  "-o", "optflow_2frames" , "optflow_2frames.cpp" , "-lm"]) #compile the code 
         res = subprocess.run(["perf", "stat" ,"-e" ,"instructions,cycles,branches,cache-references,cache-misses" ,"./optflow_2frames"], capture_output=True, text=True) #executing perf stat with compiled code
         #catch relevant values
-        #print(res)
         ins = re.search("([0-9][0-9.]+)\s*(instructions)", res.stderr)
         cyc = re.search("([0-9][0-9.]+)\s*cycles", res.stderr)
         bra = re.search("([0-9][0-9.]+)\s*branches", res.stderr)
@@ -62,7 +61,7 @@ def collect_data(videos):
         cam = re.search("([0-9][0-9.]+)\s*cache-misses", res.stderr)
         time = re.search("([0-9]+,[0-9]*)\s*seconds time elapsed", res.stderr)
 
-
+        #Write to CSV file
         if index<2:
             with open("optflow_2frames_data.csv", "w") as csv_f:
                 writer = csv.writer(csv_f)

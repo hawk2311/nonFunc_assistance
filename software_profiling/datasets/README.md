@@ -7,7 +7,7 @@ When executing the script you need to add:
 3. the name of the compiled code (the executable)
 4. the name of the CSV file which should store the data of all runs
 5. the name of the CSV file for the calculated averages
-(optional) 6. add the "-header" flag to generate for all images in the "image" directory the corresponding header files
+Currently not working, header files are generated always: (optional) 6. add the "-header" flag to generate for all images in the "image" directory the corresponding header files
 
 
 Start script for edge detection:

@@ -10,12 +10,14 @@ import numpy as np
 image_size = [] #store size of images for later use
 
 comp_cmd=sys.argv[1] #you need to add the compilation command for your code 
-name_code = sys.argv[2]
+name_code = sys.argv[2] #name of code which should be used
 name_exec = sys.argv[3] #add the name of the executable of the compilation, must be the same as in the command before
 csv_data = sys.argv[4] #output for perf data
 csv_avg = sys.argv[5] #average values of perf data
 
-
+#---------------------------------------------------------------
+# following code is to work with the command for compiling
+#temporary values
 buffer= []
 a = 0
 def addNextWort():
@@ -39,6 +41,9 @@ def createBuffer():
 
     return buffer
 
+#-----------------------------------------------------------------
+
+#create a header file for given image
 def create_header(name, index):
     img = Image.open(name).convert("L")
     width, height = img.size # returns #tupel(width, height)
@@ -55,19 +60,20 @@ def create_header(name, index):
             f.write(f"    {{{line}}},\n")
         f.write("};\n\n#endif\n")
 
-
+#currently not in use
 def get_sizes(images):
     for im in images:
         img= Image.open("images/dataset_2/"+im).convert("L")
         image_size.append(img.size)
 
-
+#function to generate header files for all images
 def create_image_data(images):
     index = 1
     for im in images:
         create_header("images/dataset_2/"+im, index)
         index+=1
 
+#code needs to be updated for every run, new information is overwritten in code
 def update_code(index, width, height):
     with open(name_code, "r",  encoding='utf-8') as file:
         data = file.readlines()
@@ -126,6 +132,7 @@ def collect_data(images, index):
                 avg_cam = int(sum_cam/10)
                 avg_time = sum_time/10
 
+                #writing in CSV files with average values
                 if index<1:
                     with open(csv_avg, "w") as csv_f:
                                     writer = csv.writer(csv_f)
@@ -148,12 +155,12 @@ def main():
     images = os.listdir("images/dataset_2")
     images.sort()
 
+    #TODO
     #if the -header flag is set than the header files for the images will be created
-    if sys.argv[6] == "-header":
-         create_image_data(images)
-    else:
-         get_sizes(images)
-
+    # if sys.argv[6] == "-header":
+    #      create_image_data(images)
+    # else:
+    #      get_sizes(images)
 
     # parser = argparse.ArgumentParser()
     # parser.add_argument("-header", action="store_true")
@@ -163,7 +170,7 @@ def main():
     # else:
     #     get_sizes()
 
-
+    create_image_data(images)
     createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
 
     for index in range(len(image_size)):

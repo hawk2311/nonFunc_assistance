@@ -11,8 +11,8 @@ Currently not working, header files are generated always: (optional) 6. add the 
 
 
 Start script for edge detection:
-python3 create_dataset.py "gcc -static -o edgeBare edgeBare.c -lm" edgeBare.c edgeBare edge_dec_data.csv edge_dec_avg.csv 
+python3 create_dataset.py "gcc -O2 -static -o edgeBare edgeBare.c -lm" edgeBare.c edgeBare edge_dec_data.csv edge_dec_avg.csv 
 
 Start script for fftw:
-python3 create_dataset.py "gcc -static -o fftw fftw.c -lfftw3 -lm" fftw.c fftw fftw_data.csv fftw_avg.csv 
+python3 create_dataset.py "gcc -O2 -static -o fftw fftw.c -lfftw3 -lm" fftw.c fftw fftw_data.csv fftw_avg.csv 
 

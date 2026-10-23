@@ -51,7 +51,7 @@ def create_header(name, index):
     #convert into NumPy-Array 
     pixel_data = np.array(img, dtype=np.uint8) 
     # export it as a C-array
-    with open("header/images/dataset_2/image_data_"+str(index)+".h", "w") as f:
+    with open("header/images/image_data_"+str(index)+".h", "w") as f:
         f.write("#ifndef IMAGE_DATA_H\n#define IMAGE_DATA_H\n\n")
         f.write("#include <stdint.h>\n\n")
         f.write(f"const uint8_t image_data[{height}][{width}] = {{\n") 
@@ -63,21 +63,21 @@ def create_header(name, index):
 #currently not in use
 def get_sizes(images):
     for im in images:
-        img= Image.open("images/dataset_2/"+im).convert("L")
+        img= Image.open("images/"+im).convert("L")
         image_size.append(img.size)
 
 #function to generate header files for all images
 def create_image_data(images):
     index = 1
     for im in images:
-        create_header("images/dataset_2/"+im, index)
+        create_header("images/"+im, index)
         index+=1
 
 #code needs to be updated for every run, new information is overwritten in code
 def update_code(index, width, height):
     with open(name_code, "r",  encoding='utf-8') as file:
         data = file.readlines()
-        data[0] = "#include \"header/images/dataset_2/image_data_"+str(index)+".h\"\n"
+        data[0] = "#include \"header/images/image_data_"+str(index)+".h\"\n"
         data[1] = "#define WIDTH "+ str(width) +"\n"
         data[2] = "#define HEIGHT "+ str(height) + "\n"
     with open(name_code, "w",  encoding='utf-8') as file:
@@ -86,8 +86,9 @@ def update_code(index, width, height):
 
 def collect_data(images, index):
     sum_ins = sum_cyc = sum_bra = sum_car = sum_cam = sum_time =0
+    pixel=image_size[index][0]*image_size[index][1]
     for i in range(10):
-            res = subprocess.run(["perf", "stat" ,"-e" ,"instructions,cycles,branches,cache-references,cache-misses" , "./" + name_exec], capture_output=True, text=True) #executing perf stat with compiled code
+            res = subprocess.run(["taskset", "-c", "0", "perf", "stat" ,"-e" ,"instructions,cycles,branches,cache-references,cache-misses" , "./" + name_exec], capture_output=True, text=True) #executing perf stat with compiled code
             #catch relevant values
             ins = re.search("([0-9][0-9.]+)\s*(instructions)", res.stderr)
             cyc = re.search("([0-9][0-9.]+)\s*cycles", res.stderr)
@@ -136,11 +137,11 @@ def collect_data(images, index):
                 if index<1:
                     with open(csv_avg, "w") as csv_f:
                                     writer = csv.writer(csv_f)
-                                    writer.writerow(['image_name', 'image_size:(width,height)', 'instructions','cycles','branches','cache-referencs','cache-misses', 'time elapsed in s'])
+                                    writer.writerow(['image_name', 'image_size:(width,height)', 'instructions','cycles','branches','cache-referencs','cache-misses', 'time elapsed in s', 'pixels', 'Inst/Pix', 'Branch/Pix', 'IPC'])
 
                 with open(csv_avg, "a") as csv_f:
                             writer = csv.writer(csv_f)
-                            writer.writerow([images[index], image_size[index], avg_ins, avg_cyc, avg_bra, avg_car, avg_cam, avg_time])
+                            writer.writerow([images[index], image_size[index], avg_ins, avg_cyc, avg_bra, avg_car, avg_cam, avg_time, pixel, int(avg_ins/pixel), int(avg_bra/pixel), int(avg_ins/avg_cyc) ])
 
 
 
@@ -152,7 +153,7 @@ def collect_data(images, index):
 
 
 def main():
-    images = os.listdir("images/dataset_2")
+    images = os.listdir("images")
     images.sort()
 
     #TODO
@@ -170,7 +171,8 @@ def main():
     # else:
     #     get_sizes()
 
-    create_image_data(images)
+    #create_image_data(images)
+    get_sizes(images)
     createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
 
     for index in range(len(image_size)):

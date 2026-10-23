@@ -1,4 +1,4 @@
-#include "header/images/dataset_2/image_data_22.h"
+#include "header/images/image_data_46.h"
 #define WIDTH 895
 #define HEIGHT 597
 

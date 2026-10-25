@@ -155,7 +155,8 @@ def collect_data(images, index):
 def main():
     images = os.listdir("images")
     images.sort()
-
+    
+    
     #TODO
     #if the -header flag is set than the header files for the images will be created
     # if sys.argv[6] == "-header":
@@ -171,15 +172,17 @@ def main():
     # else:
     #     get_sizes()
 
-    #create_image_data(images)
-    get_sizes(images)
-    createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
 
-    for index in range(len(image_size)):
-        width, height = image_size[index] #width and height of all images got saved before
-        update_code(index+1, width, height)
-        subprocess.run(buffer)   #compile the code
-        collect_data(images, index)
+    #create_image_data(images)
+
+    # get_sizes(images)
+    # createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
+
+    # for index in range(len(image_size)):
+    #     width, height = image_size[index] #width and height of all images got saved before
+    #     update_code(index+1, width, height)
+    #     subprocess.run(buffer)   #compile the code
+    #     collect_data(images, index)
         
 
     

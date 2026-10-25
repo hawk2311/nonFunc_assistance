@@ -1,4 +1,13 @@
-Using script in general:
+To run the workflow, you can use the workflow.sh. This will run the create_dataset.py, first with edge detection and then with fftw. You can modify this to execute your own workflow. In the end of the workflow.sh, the generated csv files will be merged. Here you need to add the csv files you want to merge if you modify the workflow.
+
+Use workflow.sh:
+chmod +x workflow.sh
+
+./workflow.sh
+
+All data from csv files is currently merged in the all_data.csv.
+
+Using script (create_dataset.py) in general:
 python3 create_dataset.py "whole_command_for_compiling" c_code name_of_compiled_code data_from_all_runs avg_data {-header}
 
 When executing the script you need to add:

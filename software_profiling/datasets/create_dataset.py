@@ -173,16 +173,16 @@ def main():
     #     get_sizes()
 
 
-    #create_image_data(images)
+    create_image_data(images)
 
-    # get_sizes(images)
-    # createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
+    #get_sizes(images)
+    createBuffer() #with this it is possible to enter the compile command and give it to subprocess.run
 
-    # for index in range(len(image_size)):
-    #     width, height = image_size[index] #width and height of all images got saved before
-    #     update_code(index+1, width, height)
-    #     subprocess.run(buffer)   #compile the code
-    #     collect_data(images, index)
+    for index in range(len(image_size)):
+        width, height = image_size[index] #width and height of all images got saved before
+        update_code(index+1, width, height)
+        subprocess.run(buffer)   #compile the code
+        collect_data(images, index)
         
 
     

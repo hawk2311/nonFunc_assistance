@@ -1,6 +1,6 @@
-#include "header/images/image_data_46.h"
-#define WIDTH 895
-#define HEIGHT 597
+#include "header/images/image_data_101.h"
+#define WIDTH 787
+#define HEIGHT 576
 
 #include <stdio.h>
 #include <stdint.h>

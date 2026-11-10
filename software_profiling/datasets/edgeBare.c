@@ -1,4 +1,4 @@
-#include "header/images/image_data_100.h"
+#include "header/images/image_data_400.h"
 #define WIDTH 787
 #define HEIGHT 576
 
